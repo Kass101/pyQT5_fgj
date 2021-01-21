@@ -20,7 +20,7 @@ class Example(QWidget):  # класс, который наследуетс из 
         self.move(qr.topLeft())
 
 
-if __name__ == "___main__":
+if __name__ == "__main__":
     app = QApplication(sys.argv)
     ex = Example()
     sys.exit(app.exec_())
