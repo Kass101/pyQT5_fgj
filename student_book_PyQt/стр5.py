@@ -1,3 +1,4 @@
+# ИКОНКА ПРИЛОЖЕНИЯ
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QDesktopWidget  # импрорт необходимых модулей
 from PyQt5.QtGui import QIcon
@@ -9,17 +10,11 @@ class Example(QWidget):  # класс, который наследуетс из 
         self.initUI()
 
     def initUI(self):  # создание Gui (компонеты граф интерфейса)
-        self.setGeometry(300, 300, 300, 220)  # методы resize и move в одном
-        self.center()
+        self.setGeometry(300, 300, 300, 220)  # методы resize и move в одном)
         self.setWindowTitle("Icon")
         self.setWindowIcon(QIcon("logo.png"))  # иконка приложения
         self.show()
 
-    def center(self):
-        qr = self.frameGeometry()
-        cp = QDesktopWidget().availableGeometry().center()
-        qr.moveCenter(cp)
-        self.move(qr.topLeft())
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)  # создание объекта приложения, Sys.argv - список аргументов из cmd
