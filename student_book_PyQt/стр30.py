@@ -4,24 +4,25 @@ import sys
 from PyQt5.QtWidgets import (QMainWindow, QTextEdit, QAction, QFileDialog, QApplication)
 from PyQt5.QtGui import QIcon
 
+
 class Example(QMainWindow):
     def __init__(self):  # __init__() - Конструктор класса в языке Python
         super().__init__()  # метод super() возвращает объект родителя из класса Example и мы вызыв его конструктор.
         self.initUI()
 
     def initUI(self):
-        self.textEdit = QTextEdit()
-        self.setCentralWidget(self.textEdit)
-        self.statusBar()
+        self.textEdit = QTextEdit()  # создание текстового блока
+        self.setCentralWidget(self.textEdit)  # устанавливает виждет в качестве центрального виджета главного экрана
+        self.statusBar()  # строка состояния
 
-        openFile = QAction(QIcon('logo.png'), 'Open', self)
-        openFile.setShortcut('Ctrl+Q')
-        openFile.setStatusTip('Open new File')
+        openFile = QAction(QIcon('logo.png'), 'Open', self)  # добавляеи действие иконка + название
+        openFile.setShortcut('Ctrl+Q')  # задаем горячие клавиши
+        openFile.setStatusTip('Open new File')  # добавляет статус в строку состояния
         openFile.triggered.connect(self.showDialog)
 
-        menubar = self.menuBar()
-        fileMenu = menubar.addMenu('&File')
-        fileMenu.addAction(openFile)
+        menubar = self.menuBar()  # создание меню
+        fileMenu = menubar.addMenu('&File')  # создание меню и его название
+        fileMenu.addAction(openFile)  # добавить действие открытие файла
 
         self.setGeometry(300, 300, 350, 300)
         self.setWindowTitle('File dialog')
@@ -33,6 +34,7 @@ class Example(QMainWindow):
         with f:
             data = f.read()
             self.textEdit.setText(data)
+        # выбранное имя файла читается и содержащий файл устанавливается в виджет редактир текста
 
 
 if __name__ == '__main__':
