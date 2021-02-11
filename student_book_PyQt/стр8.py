@@ -16,7 +16,7 @@ class Example(QWidget):  # класс, который наследуетс из 
         # sizeHint() дает рекаменд размер окна
         qbtn.move(50, 50)
 
-        self.setGeometry(300, 300, 300, 220)  # методы resize и move в одном
+        self.setGeometry(300, 300, 300, 220)  # методы move и resize в одном
         self.setWindowTitle("Tooltips")  # заголовок окна
         self.show()
 
